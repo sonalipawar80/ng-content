@@ -1,0 +1,18 @@
+<div class="modal-backdrop"
+(click)="onclickhide(false)"
+ *ngIf="show">
+    <div class="card"
+    (click)="$event.stopImmediatePropagation()">
+       <div class="card-header">
+        <ng-content select="[modal-header]"></ng-content>
+       </div>
+        <div class="card-body">
+            <ng-content select="[modal-body]"></ng-content>
+        </div>
+        <div class="card-footer d-flex justify-content-between">
+            <button (click)="onclickhide(true)" class="btn btn-sm btn-outline-info">Cancel</button>
+            <button (click)="onclickhide(false)" class="btn btn-sm btn-outline-danger">Remove</button>
+        </div>
+    </div>
+    
+</div>
